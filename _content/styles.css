@@ -1,9 +1,9 @@
 body {
+    scroll-behavior: smooth;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
-    overflow: hidden;
     color: #ffffff;
     font-family: Arial, sans-serif;
     margin: 0;
@@ -12,7 +12,7 @@ body {
 }
 
 header {
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 48%, rgba(96,0,255,1) 100%);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 48%,  rgba(96,0,255,1) 100%);
     color: white;
     padding: 15px 0;
 }
@@ -98,6 +98,7 @@ nav ul li a {
 .about-title {
     font-size: 2.5em;
     margin-bottom: 10px;
+    color: #cccccc;
 }
 
 .about-subtitle {
@@ -122,7 +123,7 @@ nav ul li a {
 .about-h2 {
     font-size: 1.8em;
     margin-bottom: 20px;
-    color: #4aa3df;
+    color: #cccccc;
 }
 
 .about-card-grid {
@@ -144,7 +145,7 @@ nav ul li a {
 .about-card h3 {
     font-size: 1.3em;
     margin-bottom: 15px;
-    color: #4aa3df;
+    color: #cccccc;
 }
 
 .about-card p {
