@@ -1,0 +1,51 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+<html lang="en">
+    <Header />
+    <body>
+        <section class="error-content">
+            <div class="container">
+                <h1 class="error-title">puts(err);</h1>
+                <h2 class="error-title">Page not found.</h2>
+            </div>
+        </section>
+    </body>
+    <style>
+        .error-content .container {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body {
+            scroll-behavior: smooth;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .error-title {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #cccccc;
+        }
+    </style>
+    <Footer />
+</html>

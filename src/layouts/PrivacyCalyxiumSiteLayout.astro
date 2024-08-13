@@ -1,0 +1,104 @@
+---
+import Header from "../components/Header.astro"
+import Footer from "../components/Footer.astro"
+---
+<Header />
+<body>
+    <section class="Privacy-content">
+        <div class="container">
+            <h1 class="Privacy-title">Text file Privacy Policy</h1>
+            <pre class="Privacy-text">
+Last Updated: 2024-08-13
+
+Calyxium ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy outlines how we collect, use, and safeguard your information when you visit our website calyxium.cc (the "Site").
+
+1. Information We Collect
+When you visit our Site, we may collect certain information automatically, including:
+
+    IP Address: We collect your IP address to help us understand how our Site is being used and to enhance your experience.
+    User Agent: We collect details about your browser, operating system, and device type.
+    Cookies and Tracking Technologies: We may use cookies and other tracking technologies to improve your experience on our Site and analyze site traffic. Cookies may store information such as your preferences or previous interactions with our Site.
+    Usage Data: We collect information about how you use our Site, including the pages you visit, the time spent on those pages, and other similar information.
+
+2. How We Use Your Information
+We use the information we collect to:
+
+    Analyze and understand how our Site is used;
+    Improve the functionality and performance of our Site;
+    Enhance the user experience by customizing the content you see;
+    Monitor and secure our Site against potential security threats;
+    Comply with legal obligations.
+
+3. Sharing Your Information
+We do not sell, trade, or otherwise transfer your personal information to outside parties. We may share your information only in the following situations:
+
+    Service Providers: We may share your information with third-party service providers who assist us in operating our Site and conducting our business.
+    Legal Compliance: We may disclose your information if required by law or in response to legal requests, such as court orders or subpoenas.
+    Security: We may disclose your information if we believe it is necessary to protect the rights, property, or safety of Calyxium, our users, or others.
+
+4. Security of Your Information
+We take reasonable measures to protect your information from unauthorized access, use, or disclosure. However, no method of data transmission or storage is completely secure, and we cannot guarantee the absolute security of your information.
+
+5. Your Choices
+
+    Cookies: You can choose to disable cookies through your browser settings. However, disabling cookies may affect the functionality of our Site.
+    Do Not Track: Our Site does not respond to Do Not Track signals from your browser.
+
+6. Changes to This Privacy Policy
+We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated "Last Updated" date. We encourage you to review this Privacy Policy periodically to stay informed about how we are protecting your information.
+
+7. Contact Us
+If you have any questions or concerns about this Privacy Policy, please contact us at CalyxiumSupport@proton.me.
+            </pre>
+        </div>
+    </section>
+</body>
+<style>
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    body {
+        scroll-behavior: smooth;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+        color: #ffffff;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .Privacy-content .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .Privacy-title {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        color: #cccccc;
+    }
+
+    .Privacy-text {
+        font-size: 1.1em;
+        color: #ccc;
+        background-color: #121212;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        white-space: pre-wrap;
+        font-family: "Courier New", Courier, monospace;
+        width: 100%;
+        overflow-x: auto;
+    }
+</style>
+<Footer />

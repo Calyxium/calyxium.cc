@@ -1,0 +1,54 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+<Header />
+<body>
+    <section class="copyright-content">
+        <div class="container">
+            <h1 class="copyright-title">Copyright</h1>
+            <p class="copyright-subtitle">the contents of this site are licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</a>, and code is licensed under a <a href="/license">BSD license</a>.</p>
+        </div>
+    </section>
+</body>
+<style>
+    .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body {
+            scroll-behavior: smooth;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .copyright-content .container {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .copyright-title {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #cccccc;
+        }
+        
+        .copyright-subtitle {
+            font-size: 1.2em;
+            color: #ccc;
+        }
+</style>
+<Footer />

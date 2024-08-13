@@ -1,0 +1,104 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+<Header />
+<body>
+    <section class="conduct-content">
+        <div class="container">
+            <h1 class="conduct-title">Calyxium Community Code of Conduct</h1>
+            <p class="conduct-subtitle">Online communities include people from many different backgrounds. The Go contributors are committed to providing a friendly, safe and welcoming environment for all, regardless of gender identity and expression, sexual orientation, disabilities, neurodiversity, physical appearance, body size, ethnicity, nationality, race, age, religion, or similar personal characteristics.</p>
+
+            <p class="conduct-subtitle">The first goal of the Code of Conduct is to specify a baseline standard of behavior so that people with different social values and communication styles can talk about Go effectively, productively, and respectfully.</p>
+            
+            <p class="conduct-subtitle">The second goal is to provide a mechanism for resolving conflicts in the community when they arise.</p>
+
+            <p class="conduct-subtitle">The third goal of the Code of Conduct is to make our community welcoming to people from different backgrounds. Diversity is critical to the project; for Calyxium to be successful, it needs contributors and users from all backgrounds. (See <a href="/blog">Calyxium, Open Source, Community</a>.)</p>
+
+
+            <p class="conduct-subtitle">We believe that healthy debate and disagreement are essential to a healthy project and community. However, it is never ok to be disrespectful. We value diverse opinions, but we value respectful behavior more.</p>
+
+            <h1 class="conduct-title">Nova values</h1>
+
+            <p class="conduct-subtitle">These are the values to which people in the Calyxium community should aspire.</p>
+            
+            <h2 class="conduct-title-two">Be friendly and welcoming</h2>
+            <h2 class="conduct-title-two">Be patient</h2>
+            <p class="conduct-subtitle">Remember that people have varying communication styles and that not everyone is using their native language. (Meaning and tone can be lost in translation.)</p>
+                
+            <h2 class="conduct-title-two">Be thoughtful.</h2>
+            <p class="conduct-subtitle">Productive communication requires effort. Think about how your words will be interpreted. Remember that sometimes it is best to refrain entirely from commenting.</p>
+            
+            <h2 class="conduct-title-two">Be respectful.</h2>
+            <p class="conduct-subtitle">In particular, respect differences of opinion.</p>
+
+            <h2 class="conduct-title-two">Be charitable.</h2>
+            <p class="conduct-subtitle">Interpret the arguments of others in good faith, do not seek to disagree. When we do disagree, try to understand why.</p>
+            
+            <h2 class="conduct-title-two">Be constructive.</h2>
+            
+            <p class="conduct-subtitle">Avoid derailing: stay on topic; if you want to talk about something else, start a new conversation. 
+            Avoid unconstructive criticism: don't merely decry the current state of affairs; offer or at least solicit suggestions as to how things may be improved.
+            Avoid snarking (pithy, unproductive, sniping comments)
+            Avoid discussing potentially offensive or sensitive issues; this all too often leads to unnecessary conflict.
+            Avoid microaggressions (brief and commonplace verbal, behavioral and environmental indignities that communicate hostile, derogatory or negative slights and insults to a person or group).</p>
+            
+            <h2 class="conduct-title-two">Be responsible.</h2>
+            
+            <p class="conduct-subtitle">What you say and do matters. Take responsibility for your words and actions, including their consequences, whether intended or otherwise.</p>
+
+            <h1 class="conduct-title">Summary</h1>
+            <p class="conduct-subtitle">Treat everyone with respect and kindness.</p>
+            <p class="conduct-subtitle">Be thoughtful in how you communicate.</p>
+            <p class="conduct-subtitle">Don't be destructive or inflammatory.</p>
+            <p class="conduct-subtitle">If you encounter an issue, please mail <a href="mailto:conduct@calyxium.cc">conduct@calyxium.cc</a>.</p> 
+        </div>  
+    </section>
+</body>
+<style>
+    .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body {
+            scroll-behavior: smooth;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .conduct-content .container {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .conduct-title {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #cccccc;
+        }
+
+        .conduct-title-two {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #cccccc;
+        }
+        
+        .conduct-subtitle {
+            font-size: 1.2em;
+            color: #ccc;
+        }
+</style>
+<Footer />

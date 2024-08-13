@@ -1,28 +1,135 @@
-<footer class="footer">
-    <div class="container">
-        <p>&copy; 2024 Calyxium. All rights reserved.</p>
+---
+import { Image } from "astro:assets"
+import MyImportedImage from '../assets/nova-logo.png'
+---
+<footer>
+    <div class="footer-content">
+        <div>
+            <h3>Why Calyxium</h3>
+            <ul>
+                <li><a href="/use-cases">Use Cases</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Get Started</h3>
+            <ul>
+                <li><a href="/play">Playground</a></li>
+                <li><a href="/help">Help</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Packages</h3>
+            <ul>
+                <li><a href="/pkg">Standard Library</a></li>
+                <li><a href="/pkg/about">About Calyxium Packages</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>About</h3>
+            <ul>
+                <li><a href="/download">Download</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://github.com/Calyxium/Calyxium/issues">Issue Tracker</a></li>
+                <li><a href="/release">Release Notes</a></li>
+                <li><a href="/conduct">Code of Conduct</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Connect</h3>
+            <ul>
+                <li><a href="https://github.com/Calyxium">GitHub</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="footer-logo">
+            <Image src={MyImportedImage} alt="Nova Logo">
+        </div>
+        <div>
+            <a href="/copyright">Copyright</a> |
+            <a href="/tos">Terms of Service</a> |
+            <a href="/privacy">Privacy Policy</a> |
+            <a href="https://github.com/Calyxium/Calyxium/issues/new/?title=x%2Fwebsite:&body=%3C%21--%0APlease+answer+these+questions+before+submitting+your+issue.+Thanks%21%0A--%3E%0A+%0A%23%23%23+What+is+the+URL+of+the+page+with+the+issue%3F%0A+%0A+%0A+%0A%23%23%23+What+is+your+user+agent%3F%0A+%0A%3C%21--+%0AYou+can+find+your+user+agent+here%3A%0Ahttps%3A%2F%2Fwww.whatismybrowser.com%2Fdetect%2Fwhat-is-my-user-agent%0A--%3E%0A+%0A+%0A+%0A%23%23%23+Screenshot%0A+%0A%3C%21--%0APlease+paste+a+screenshot+of+the+page.%0A--%3E%0A+%0A+%0A+%0A%23%23%23+What+did+you+do%3F%0A+%0A%3C%21--%0AIf+possible%2C+provide+a+recipe+for+reproducing+the+error.%0A--%3E%0A+%0A+%0A+%0A%23%23%23+What+did+you+expect+to+see%3F%0A+%0A+%0A+%0A%23%23%23+What+did+you+see+instead%3F%0A%0A%0A%0A">Report an Issue</a>
+        </div>
     </div>
     <style>
+        footer {
+            margin-top: 50px;
+            background-color: #282828;
+            color: #ffffff;
+            padding: 20px 0;
+            font-size: 14px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            padding: 0 50px;
+        }
+
+        .footer-content div {
+            flex: 1;
+        }
+
+        .footer-content h3 {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #e0e0e0;
+        }
+
+        .footer-content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .footer-content ul li {
+            margin: 8px 0;
+        }
+
+        .footer-content ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            transition: color 0.3s;
+        }
+
+        .footer-content ul li a:hover {
+            color: #1abc9c;
+        }
+
+        .footer-bottom {
+            display: block;
+            justify-content: center;
+            padding: 0px 50px;
+            border-top: 1px solid #1a2429;
+            font-size: 12px;
+        }
+
+        .footer-bottom a {
+            text-decoration: none;
+            color: #ffffff;
+            margin-left: 10px;
+        }
+
+        .footer-bottom a:hover {
+            color: #1abc9c;
+        }
+
+        .footer-logo img {
+            position: relative;
+            height: 110px;
+        }
+
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            display: flex;
+            display: flexbox;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-        }
-
-        .footer {
-            margin-top: 50px;
-            text-align: center;
-            padding: 20px 0;
-            background-color: transparent;
-        }
-
-        .footer p {
-            color: #ccc;
-            font-size: 0.9em;
         }
     </style>
 </footer>
