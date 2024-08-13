@@ -1,0 +1,126 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+<html lang="">
+    <Header />
+    <body>
+        <section class="download-content">
+            <div class="container">
+                <h1 class="download-title">All releases</h1>
+                <p class="download-subtitle">After downloading a binary release suitable for your system, please follow the <a class="download-link" href="/install">installation instructions.</a></p>
+                <p class="download-subtitle">If you are building from source, follow the <a class="download-link" href="/install/source">source installation instructions.</a></p>
+                <p class="download-subtitle">See the <a class="download-link" href="/release"> release history </a>for more information about Calyxium releases.</p>
+                <h2 class="download-title-feature">Featured downloads</h2>
+                <div class="downloads-container">
+                    <div class="download-card">
+                        <h3>Microsoft Windows</h3>
+                        <p>Windows 10 or later, Intel 64-bit processer</p>
+                        <a class="download-link" href="#">calyxium0.0.1.windows.amd64.msi</a>
+                    </div>
+                    <div class="download-card">
+                        <h3>Apple macOS (ARM64)</h3>
+                        <p>macOS 11 or later, Apple 64-bit processor</p>
+                        <a href="#">calyxium0.0.1.darwin-arm64.pkg</a>
+                    </div>
+                    <div class="download-card">
+                        <h3>Apple macOS (x86-64)</h3>
+                        <p>macOS 10.15 or later, Intel 64-bit processor</p>
+                        <a href="#">calyxium0.0.1.darwin-amd64.pkg</a>
+                    </div>
+                    <div class="download-card">
+                        <h3>Linux</h3>
+                        <p>Linux 2.6.32 or later, Intel 64-bit processor</p>
+                        <a href="#">calyxium0.0.1.linux-amd64.tar.gz</a>
+                    </div>
+                    <div class="download-card">
+                        <h3>Source</h3>
+                        <p>Source code archive</p>
+                        <a href="#">calyxium0.0.1.src.tar.gz</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+    <style>
+        .download-link {
+            color: aqua;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body {
+            scroll-behavior: smooth;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .download-content .container {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .downloads-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Center the cards */
+            padding: 20px;
+            gap: 20px; /* Add gap between cards */
+        }
+
+        .download-card {
+            background-color: #2c2c2c;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            width: 300px; /* Set a consistent width */
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .download-card:hover {
+            transform: scale(1.05);
+        }
+
+        .download-card h3 {
+            margin-top: 0;
+            font-size: 18px;
+            color: #ffffff;
+        }
+
+        .download-card p {
+            font-size: 14px;
+            color: #d3d3d3;
+            margin: 10px 0;
+        }
+
+        .download-card a {
+            display: block;
+            color: #4aa1f3;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .download-card a:hover {
+            text-decoration: underline;
+        }  
+    </style>
+    <Footer />
+</html>
