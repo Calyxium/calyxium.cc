@@ -1,0 +1,56 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+<html lang="en">
+    <Header />
+    <body>
+        <section class="doc-content">
+            <div class="container">
+                <h1 class="doc-title">Documentation</h1>
+                <p class="doc-subtitle">The Calyxium programming language is an open source project to make programmers more productive.</p>
+            </div>
+        </section>
+    </body>
+    <Footer />
+    <style>
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body {
+            scroll-behavior: smooth;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .doc-content .container {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .doc-title {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #cccccc;
+        }
+        
+        .doc-subtitle {
+            font-size: 1.2em;
+            color: #ccc;
+        }
+    </style>
+</html>

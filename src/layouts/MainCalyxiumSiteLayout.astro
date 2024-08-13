@@ -1,0 +1,99 @@
+---
+import Header from '../components/Header.astro'
+import { Image } from 'astro:assets'
+import MyImportedImage from '../assets/nova.png'
+import Footer from '../components/Footer.astro'
+--- 
+<html lang="en">
+    <Header />
+    <body>
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-text">
+                    <h1>Build fast, reliable, and efficient software at scale</h1>
+                    <p>Calyxium is an open source programming language supported by Calyxium.</p>
+                    <div class="buttons">
+                        <a href="/docs" class="btn-primary">Get Started</a>
+                        <a href="/downloads" class="btn-primary">Download Calyxium</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <Image src={MyImportedImage} alt="Nova" width={349.25} height={300}>
+                </div>
+            </div>
+        </section>
+    </body>
+    <Footer />
+    <style>
+        body {
+            scroll-behavior: smooth;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .hero-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hero {
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 65%, rgba(96,0,255,1) 100%);
+            color: white;
+            padding: 60px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            max-width: 85%;
+            margin: 37px auto 0;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgb(79, 44, 160) 0%);
+            color: black;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #e6b800;
+        }
+
+        .hero-image img {
+            height: 300px;
+        }
+    </style>
+</html>

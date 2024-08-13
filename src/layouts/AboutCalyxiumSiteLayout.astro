@@ -1,0 +1,131 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+---
+<html lang="en">
+    <Header />
+    <body>
+        <section class="about-content">
+            <div class="container">
+                <h1 class="about-title">The Calyxium Project</h1>
+                <p class="about-subtitle">Calyxium is an open-source programming language developed and supported by the Calyxium community.</p>
+                <p class="about-license">Calyxium is distributed under an <a href="#">BSD-Style license</a>.</p>
+                <h2 class="about-h2">Version History</h2>
+                <div class="about-card-grid">
+                    <div class="about-card">
+                        <h3>Release History</h3>
+                        <p>A <a href="#">summary</a> of the changes between Calyxium releases.</p>
+                    </div>
+                    <div class="about-card">
+                        <h3>Calyxium 1.0 and the Future</h3>
+                        <p>What Calyxium 1.0 defines and the backwards-compatibility guarantees one can expect as Calyxium matures.</p>
+                    </div>
+                </div>
+    
+                <h2 class="about-h2">Developer Resources</h2>
+                <div class="about-card-grid">
+                    <div class="about-card">
+                        <h3>Source Code</h3>
+                        <p>Check out the <a href="https://github.com/Calyxium/Calyxium">Calyxium source code</a>.</p>
+                    </div>
+                    <div class="about-card">
+                        <h3>Discussion Mailing List</h3>
+                        <p>A mailing list for general discussion of Calyxium programming. Questions about using Calyxium or announcements relevant to other Calyxium users should be sent to the <a href="#">Calyxium Discussion List</a>.</p>
+                    </div>
+                    <div class="about-card">
+                        <h3>Developer Mailing List</h3>
+                        <p>The <a href="#">Calyxium-dev mailing list</a> is for discussing code changes to the Calyxium project.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+    <style>
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body {
+            scroll-behavior: smooth;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .about-title {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #cccccc;
+        }
+
+        .about-subtitle {
+            font-size: 1.2em;
+            color: #ccc;
+        }
+
+        .about-license {
+            font-size: 0.9em;
+            color: #4aa3df;
+        }
+
+        .about-license a {
+            color: #4aa3df;
+            text-decoration: none;
+        }
+
+        .about-content {
+            padding: 50px 0;
+        }
+
+        .about-h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #cccccc;
+        }
+
+        .about-card-grid {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        .about-card {
+            background-color: #282828;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1;
+            min-width: 280px;
+            border: 1px solid #333;
+        }
+
+        .about-card h3 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            color: #cccccc;
+        }
+
+        .about-card p {
+            font-size: 1em;
+            color: #cccccc;
+        }
+
+        .about-card a {
+            color: #4aa3df;
+            text-decoration: none;
+        }
+    </style>
+    <Footer />
+</html>
