@@ -7,12 +7,16 @@ import Footer from "../components/Footer.astro";
     <section class="tos-content">
         <div class="container">
             <h1 class="tos-title">Terms of Service</h1>
-            <p class="tos-subtitle">The Calyxium website (the "Website") is hosted by Calyxium. By using and/or visiting the Website, you consent to be bound by Calyxium's general <a href="/TermsOfService">Terms of Service</a> and our <a href="/privacy">Privacy Policy</a>.</p>
+            <p class="tos-subtitle">The Calyxium website (the "Website") is hosted by Calyxium. By using and/or visiting the Website, you consent to be bound by Calyxium's general <a class="link-color" href="/TermsOfService">Terms of Service</a> and our <a class="link-color" href="/privacy">Privacy Policy</a>.</p>
         </div>
     </section>
 </body>
 <style>
-    .container {
+        .link-color {
+            color: #1abc9c;
+        }
+
+        .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
