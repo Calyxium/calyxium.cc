@@ -1,0 +1,126 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+<Header />
+<body>
+    <div class="container">
+        <div class="help-section">
+            <h2 class="help-title">Get help</h2>
+            <ul class="help-list">
+                <li>
+                    <a href="/mailing">Calyxium Mailing List</a>
+                    <p>Get help from Calyxium users, and share your work on the official mailing list.</p>
+                </li>
+                <li>
+                    <a href="/forum">Calyxium Forum</a>
+                    <p>The Calyxium Forum is a discussion forum for Calyxium programmers.</p>
+                </li>
+                <li>
+                    <a href="#">Calyxium Discord</a>
+                    <p>Get live support and talk with other Calyxium on the Calyxium Discord.</p>
+                </li>
+                <li>
+                    <a href="#">Calyxium IRC Channel</a>
+                    <p>Get live support at <strong>#calyxium on irc.libera.chat</strong>, the Calyxium IRC channel.</p>
+                </li>
+                <li>
+                    <a href="/faq">Frequently Asked Questions (FAQ)</a>
+                    <p>Answers to common questions about Calyxium.</p>
+                </li>
+            </ul>
+        </div>
+        <div class="help-section">
+            <h2 class="help-title">Community resources</h2>
+            <ul class="help-list">
+                <li>
+                    <a href="/play">Calyxium Playground</a>
+                    <p>A place to write, run, and share Calyxium code.</p>
+                </li>
+                <li>
+                    <a href="/wiki">Calyxium Wiki</a>
+                    <p>A wiki maintained by the Calyxium community.</p>
+                </li>
+                <li>
+                    <a href="/conduct">Code of Conduct</a>
+                    <p>Guidelines for participating in Calyxium community spaces and a reporting process for handling issues.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+<style>
+    .container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .help-section {
+        margin-top: 50px;
+        background-color: #1f2b38;
+        padding: 25px;
+        border-radius: 10px;
+        width: 500px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .help-section h2 {
+        margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: bold;
+        color: #cccccc;
+    }
+
+    .help-list {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .help-list li {
+        margin-bottom: 20px;
+    }
+
+    .help-list a {
+        color: #1abc9c;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .help-list a:hover {
+        text-decoration: underline;
+    }
+
+    .help-list p {
+        margin: 5px 0 0 0;
+        font-size: 15px;
+        color: #d3d4d9;
+    }
+
+    .help-list strong {
+        color: #1abc9c;
+    }
+
+    .help-list p a {
+        color: #1abc9c;
+        text-decoration: underline;
+    }
+
+    body {
+        scroll-behavior: smooth;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+        color: #ffffff;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+</style>
+<Footer />
