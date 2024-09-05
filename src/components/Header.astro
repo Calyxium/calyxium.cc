@@ -17,11 +17,14 @@ import MyImportedImage from '../assets/calyxium-header.png'
                 <li><a href="/about/">About</a></li>
             </ul>
         </nav>
-        <div class="search-bar">
-            <input type="text" placeholder="Search for a package">
+
+        <!-- Form added around the search-bar -->
+        <form id="searchForm" class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for a package">
             <span class="search-icon">&#128269;</span>
-        </div>
+        </form>
     </div>
+
     <style>
         header {
             background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 48%,  rgba(96,0,255,1) 100%);
@@ -44,6 +47,7 @@ import MyImportedImage from '../assets/calyxium-header.png'
             justify-content: space-between;
             align-items: center;
         }
+
         .logo img {
             display: block;
             height: 45px; 
@@ -90,4 +94,15 @@ import MyImportedImage from '../assets/calyxium-header.png'
             color: #007d9c;
         }
     </style>
+
+    <script>
+        document.getElementById('searchForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const searchInput = (document.getElementById('searchInput') as HTMLInputElement).value.trim().toLowerCase();
+            
+            if (searchInput) {
+                window.location.href = `/packages/${encodeURIComponent(searchInput)}`;
+            }
+        });
+    </script>
 </header>
