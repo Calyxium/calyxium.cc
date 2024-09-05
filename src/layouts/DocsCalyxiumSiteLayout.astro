@@ -5,52 +5,273 @@ import Footer from "../components/Footer.astro";
 <html lang="en">
     <Header />
     <body>
-        <section class="doc-content">
-            <div class="container">
-                <h1 class="doc-title">Documentation</h1>
-                <p class="doc-subtitle">The Calyxium programming language is an open source project to make programmers more productive.</p>
-            </div>
-        </section>
+        <div class="wrapper">
+            <nav class="toc">
+                <h2>Table of Contents</h2>
+                <ul>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#syntax">Syntax</a></li>
+                    <li><a href="#libraries">Libraries</a></li>
+                    <li><a href="#usage">Usage</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </nav>
+
+            <section class="doc-content">
+                <div class="container">
+                    <h1 class="doc-title">Calyxium Programming Language Documentation</h1>
+
+                    <div id="introduction" class="section">
+                        <h2>Introduction</h2>
+                        <p> Calyxium is a new language. Although it borrows ideas from existing languages, it has unusual properties that make effective Calyxium programs different in character from programs written in its relatives. A straightforward translation of a C++ or Java program into Calyxium is unlikely to produce a satisfactory result—Java programs are written in Java, not Calyxium. On the other hand, thinking about the problem from a Calyxium perspective could produce a successful but quite different program. In other words, to write Calyxium well, it's important to understand its properties and idioms. It's also important to know the established conventions for programming in Calyxium, such as naming, formatting, program construction, and so on, so that programs you write will be easy for other Calyxium programmers to understand.
+
+                        This document gives tips for writing clear, idiomatic Calyxium code. It augments the language specification, the Tour of Calyxium, and How to Write Calyxium Code, all of which you should read first.</p>
+                    </div>
+
+                    <div id="examples" class="section">
+                        <h2>Example</h2>
+                        <p>The <a href="packages/">Calyxium package sources</a> are intended to serve not only as the core library but also as examples of how to use the language. Moreover, many of the packages contain working, self-contained executable examples you can run directly from the <a href="calyxium.cc">calyxium.cc</a> web site, such as <a href="packages/strings#example">this one</a> (if necessary, click on the word "Example" to open it up). If you have a question about how to approach a problem or how something might be implemented, the documentation, code and examples in the library can provide answers, ideas and background. </p>
+                    </div>
+
+                    <div id="fomatting" class="section">
+                        <h2>Formatting</h2>
+                        <p> Formatting issues are the most contentious but the least consequential. People can adapt to different formatting styles but it's better if they don't have to, and less time is devoted to the topic if everyone adheres to the same style. The problem is how to approach this Utopia without a long prescriptive style guide.
+
+                            With Calyxium we take an unusual approach and let the machine take care of most formatting issues. The cfmt program, reads a Calyxium program and emits the source in a standard style of indentation and vertical alignment, retaining and if necessary reformatting comments. If you want to know how to handle some new layout situation, run cfmt; if the answer doesn't seem right, rearrange your program, don't work around it.</p>
+
+                            <p>As an example, there's no need to spend time lining up the comments on the fields of a structure. cfmt will do that for you. Given the declaration</p>
+
+                            <pre class="code-block">
+                                <code class="language-calyxium">
+    class T &#123;
+        let name: string; # name of the object
+        let value: int; # its value
+    &#125;;
+                                </code>
+                            </pre>
+
+                            <p>cfmt will line up the columns:</p>
+
+                            <pre class="code-block">
+                                <code class="language-calyxium">
+    class T &#123;
+        let name:   string; # name of the object
+        let value:  int;    # its value
+    &#125;;
+                                </code>
+                            </pre>
+
+                            <p>All Calyxium code in the standard packages has been formatted with cfmt.</p>
+                    </div>
+
+                    <div id="commentary" class="section">
+                        <h2>Commentary</h2>
+                        <p> Calyxium provides Python-style <code>#</code> line comments. Line comments are the norm;</p>
+                    </div>
+
+                    <div id="Package names" class="section">
+                        <h2>Package names</h2>
+                        <p>When a package is imported, the package name becomes an accessor for the contents. After</p>
+
+                        <pre class="code-block">
+                            <code class="language-calyxium">
+    import "System";
+                            </code>
+                        </pre>
+
+                        <p>the importing package can talk about <code>System.Print</code>. It's helpful if everyone using the package can use the same name to refer to its contents, which implies that the package name should be good: short, concise, evocative. By convention, packages are given Upper case, single-word names; there should be no need for underscores or mixedCaps. Err on the side of brevity, since everyone using your package will be typing that name. And don't worry about collisions a <code>priori</code>. The package name is only the default name for imports; it need not be unique across all source code, and in the rare case of a collision the importing package can choose a different name to use locally. In any case, confusion is rare because the file name in the import determines just which package is being used.</p>
+                    </div>
+
+                    <div id="mixedCaps" class="section">
+                        <h2>MixedCaps</h2>
+                        
+                        <p>Finally, the convention in Calyxium is to use <code>MixedCaps</code> or <code>mixedCaps</code> rather than underscores to write multiword names.</p>
+                    </div>
+
+                    <div id="Control structures" class="section">
+                        <h2>Control structures</h2>
+                        <p>The control structures of Calyxium are related to those of C but differ in important ways. There is no do or while loop, only a slightly generalized for; switch is more flexible; if and switch accept an optional initialization statement like that of for; break and continue statements take an optional label to identify what to break or continue; and there are new control structures including a type switch and a multiway communications multiplexer, select.</p>
+
+                        <h2>If</h2>
+                        <p>In Calyxium a simple <code>if</code> looks like this: </p>
+                        <pre class="code-block">
+                            <code class="language-calyxium">
+    if (x > 0) &#123;
+        return y;
+    &#125;;
+                            </code>
+                        </pre>
+
+                        <p>Mandatory braces encourage writing simple if statements on multiple lines. It's good style to do so anyway, especially when the body contains a control statement such as a <code>return</code> or <code>break</code>.</p>
+                    
+                        <h2>For</h2>
+                        <p>The Calyxium <code>for</code> loop is similar to—but not the same as—C's. It unifies for and while and there is no do-while.</p>
+                        <pre class="code-block">
+                            <code class="language-calyxium">
+    // Like a C for
+    for (init; condition; post) &#123; &#125;;
+    
+    // Like a C while
+    for (condition) &#123; &#125;;
+    
+    // Like a C for(;;)
+    for (;;) &#123; &#125;;
+                            </code>
+                        </pre>
+                    
+                        <p>Short declarations make it easy to declare the index variable right in the loop.</p>
+
+                        <pre class="code-block">
+                            <code class="language-calyxium">
+
+    let sum: int = 0;
+    for (let i: int = 0; i &#60; 10; i++) &#123; 
+        sum += i;
+    &#125;;
+    
+                            </code>
+                        </pre>
+
+                        <h2>Switch</h2>
+                        <p>Calyxium's switch is more general than C's. The expressions need not be constants or even integers, the cases are evaluated top to bottom until a match is found</p>
+                        <pre class="code-block">
+                            <code class="language-calyxium">
+    let op: byte = null;
+    switch (op) &#123;
+        case '+':
+            return op;
+            break;
+        default:
+            return null;
+    &#125;;
+                            </code>
+                        </pre>
+
+                        <h2>Functions</h2>
+                        <p>Calyxium's function is more general than C's.</p>
+                        <pre class="code-block">
+                            <code class="language-calyxium">
+    fn add(x: int, y: int): int &#123;
+        return x + y;
+    &#125;;
+                            </code>
+                        </pre>
+                    </div>
+            </section>
+        </div>
     </body>
     <Footer />
+
     <style>
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
+        .wrapper {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            flex-direction: row;
         }
 
         body {
-            scroll-behavior: smooth;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            font-family: Arial, sans-serif;
             background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
             color: #ffffff;
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
-        .doc-content .container {
+        .toc {
+            width: 20%;
+            background-color: none;
+            padding: 20px;
+            box-sizing: border-box;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+        }
+
+        .toc h2 {
+            color: #e6e6e6;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .toc ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .toc ul li {
+            margin-bottom: 10px;
+        }
+
+        .toc ul li a {
+            color: #cccccc;
+            text-decoration: none;
+            font-size: 1em;
+        }
+
+        .toc ul li a:hover {
+            color: #ffffff;
+        }
+
+        .doc-content {
+            width: 80%;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
             flex-direction: column;
-            align-items: flex-start;
         }
 
         .doc-title {
             font-size: 2.5em;
-            margin-bottom: 10px;
-            color: #cccccc;
+            color: #e6e6e6;
+            margin-bottom: 20px;
         }
-        
-        .doc-subtitle {
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #cccccc;
+            margin-bottom: 10px;
+        }
+
+        p {
             font-size: 1.2em;
-            color: #ccc;
+            color: #cccccc;
+            line-height: 1.6;
+        }
+
+        .code-block {
+            background-color: #1c1c1c;
+            color: #cfcfcf;
+            overflow-x: auto;
+            max-width: 100%;
+            line-height: 1.4;
+        }
+
+        pre {
+            white-space: pre-wrap;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .wrapper {
+                flex-direction: column;
+            }
+
+            .toc {
+                width: 100%;
+                height: auto;
+                padding-bottom: 10px;
+            }
+
+            .doc-content {
+                width: 100%;
+            }
         }
     </style>
 </html>
