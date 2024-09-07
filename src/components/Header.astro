@@ -101,7 +101,7 @@ import MyImportedImage from '../assets/calyxium-header.png'
             const searchInput = (document.getElementById('searchInput') as HTMLInputElement).value.trim().toLowerCase();
             
             if (searchInput) {
-                window.location.href = `/packages/${encodeURIComponent(searchInput)}`;
+                window.location.href = `/pkg/${encodeURIComponent(searchInput)}`;
             }
         });
     </script>
